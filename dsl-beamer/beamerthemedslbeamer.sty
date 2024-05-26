@@ -1,0 +1,82 @@
+% ------------------------------------------------- %
+% dsl beamer theme
+% ------------------------------------------------- %
+
+\mode<presentation>
+
+% --- requirements
+\RequirePackage{tikz}
+\usepackage{ragged2e}
+% --- settings
+% themes
+\usetheme{default}
+
+% % change whale color theme (there is probably an easier way)
+\definecolor{beamer@blendedblue}{rgb}{0,0,0}
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+
+\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+\setbeamertemplate{itemize item}[circle]
+
+% opensans font 
+% \usefonttheme{serif}
+\usepackage[default, scale=0.95]{opensans}
+% \usefonttheme[onlymath]{serif}
+
+% remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{% 
+  \hfill% 
+  \usebeamercolor[fg]{page number in head/foot}% 
+  \usebeamerfont{page number in head/foot}% 
+  \insertframenumber%
+  %\,/\,\inserttotalframenumber
+  \kern1em\vskip2pt% 
+}
+
+% add logo on frames
+\addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,yshift=2pt, xshift=2pt] at (current page.north east) {\includegraphics[height=0.85cm]{figures/assets/cropped_white.pdf}};
+    \end{tikzpicture}
+}
+% put logo on titlepage
+\titlegraphic{
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[xshift=-2cm, yshift=1.5cm] (firstlogo) at (current page.south){\includegraphics[width=4cm]{figures/assets/complete.pdf}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[xshift=3cm, yshift=1.4cm] (secondlogo) at (current page.south){\includegraphics[width=2.5cm]{figures/assets/ufes_logo.pdf}};
+    \end{tikzpicture}
+}   
+
+
+% block color and text justify
+% \setbeamercolor{block title}{bg=black!20, fg=black}
+% \setbeamercolor{block body}{bg=black!5}
+\addtobeamertemplate{block begin}{}{\justifying} 
+
+% table of contents
+\setbeamertemplate{section in toc}[sections numbered]
+
+% bold title frame
+\setbeamerfont{frametitle}{series=\bfseries\boldmath}
+
+% footnote without number (https://tex.stackexchange.com/questions/30720/footnote-without-a-marker)
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\mode<all>

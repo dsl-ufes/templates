@@ -1,0 +1,65 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{dslbeamer}
+
+% --- packages
+\usepackage{graphicx} % Allows including images
+\usepackage[square,numbers]{natbib}
+\usepackage{hyperref}
+\let\footnoterule\relax
+
+
+% --- title page: 
+\title{\bf{The Hitchhiker's Guide to Galaxy}}
+\author{Ford Prefect}
+\institute{Megadodo Publications Research}
+\date{May 25, 2024}
+
+\begin{document}
+    % title frame
+    \begin{frame}[plain]
+        \titlepage
+    \end{frame}
+
+    % table of contents
+    \begin{frame}{Table of Contents}
+        \tableofcontents{}
+    \end{frame}
+
+    % section 1
+    \section{Part I}
+    \begin{frame}{How to fly? (... and how to make lists!)}
+        \begin{itemize}
+            \item there is an art, it says, or, rather, a knack to flying...
+            \item the knack lies in learning how to throw yourself at the ground and miss.
+        \end{itemize}
+    \end{frame}
+
+    % section 2
+    \section{Part II}
+    \begin{frame}{Some math!}
+        \begin{equation*}
+            i^* = \underset{i \in \{1, \dots, N\}}{\text{argmax}} \left(-\sum\limits_{k=1}^{C} \phi(\mathbf{x}_i)^{(k)}\text{log}\phi(\mathbf{x}_i)^{(k)}\right)
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame}{...and a figure!}
+        \begin{itemize}
+            \item hey, you sass that hoopy Ford Prefect? there's a frood who really knows where his towel is!
+        \end{itemize}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.29\textwidth]{figures/towel.png}
+        \end{figure}
+
+       \blfootnote{Figure source: \url{https://hitchhikersguidetoearth.fandom.com/wiki/Towel?file=Always-know-where-your-towel-is.jpg}}
+    \end{frame}
+
+    % the end
+    \begin{frame}[plain]
+        \begin{center}
+            \Huge{The end!}
+        \end{center}
+    \end{frame}
+
+\end{document}
